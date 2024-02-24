@@ -12,31 +12,28 @@
 
 {% block content %}
 
+{% if messages %}
 <div>
-    <h2>Sign Up</h2>
+    {% for message in messages %}
+    <div {% if message.tags %} class="alert-{{ message.tags }}" {% endif %}>{{ message }}</div>
+    {% endfor %}
 </div>
+{% endif %}
 
-<form method="post" action="{% url 'users:signup' %}">
+<form action="{% url 'users:login' %}" method="post">
     {% csrf_token %}
     <div>
         <label> Username:
             {{ form.username }}
         </label>
-        <span>{{ form.errors.username }}</span>
     </div>
-    <br>
+
     <div>
-        <label> Password:
-            {{ form.password1 }}
+        <label>Password:
+            {{ form.password }}
         </label>
-        <span>{{ form.errors.password1 }}</span>
     </div>
-    <div>
-        <label> Password confirmation:
-            {{ form.password2 }}
-        </label>
-        <span>{{ form.errors.password2 }}</span>
-    </div>
+
     <div class="grid">
         <button type="submit">Submit</button>
         <button type="reset" class="secondary">Reset</button>
