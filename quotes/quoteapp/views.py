@@ -4,6 +4,9 @@ from django.shortcuts import render
 def main(request):
     return render(request, 'quoteapp/index.html')
 
+def add_author(request):
+    return render(request, 'quoteapp/add_author.html')
+
 def AlbertEinstein(request):
     return render(request, 'quoteapp/author/Albert Einstein.html')
 
