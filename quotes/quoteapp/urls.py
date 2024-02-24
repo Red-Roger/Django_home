@@ -5,6 +5,7 @@ app_name = 'quoteapp'
 
 urlpatterns = [
     path('', views.main, name='main'),
+    path('add_author/add_author.html', views.add_author, name='add_author'),
     path('author/Albert Einstein.html', views.AlbertEinstein, name='AlbertEinstein'),
     path('author/J.K. Rowling.html', views.JKRowling, name='JKRowling'),
     path('author/Jane Austen.html', views.JaneAusten, name='JaneAusten'),
@@ -14,4 +15,5 @@ urlpatterns = [
     path('author/Thomas A. Edison.html', views.ThomasAEdison, name='ThomasAEdison'),
     path('author/Eleanor Roosevelt.html', views.EleanorRoosevelt, name='EleanorRoosevelt'),
     path('author/Steve Martin.html', views.SteveMartin, name='SteveMartin'),
+
 ]
