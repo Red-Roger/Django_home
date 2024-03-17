@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
+from pydantic_settings import BaseSettings
 
 from pathlib import Path
 
@@ -71,6 +72,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'quotes.wsgi.application'
 
+"""
+class Settings(BaseSettings):
+
+    class Config:
+        env_file = ".env"
+        env_file_encoding = "utf-8"
+
+settings = Settings()
+"""
+
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.meta.ua'
 EMAIL_PORT = 465
@@ -83,6 +95,7 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+
 
 DATABASES = {
     'default': {
