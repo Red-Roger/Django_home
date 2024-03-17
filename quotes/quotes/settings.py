@@ -13,6 +13,11 @@ from pydantic_settings import BaseSettings
 
 from pathlib import Path
 
+#from dotenv import load_dotenv
+
+#load_dotenv()
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -72,16 +77,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'quotes.wsgi.application'
 
-"""
-class Settings(BaseSettings):
-
-    class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
-
-settings = Settings()
-"""
-
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.meta.ua'
@@ -95,6 +90,7 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+
 
 
 DATABASES = {
